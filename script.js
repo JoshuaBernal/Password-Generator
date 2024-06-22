@@ -20,7 +20,7 @@ let passwordLength = 15
 let characterPool = letters
 console.log(characterPool)
 
-function submitConfigurations() {
+function genPass() {
     let lengthInputVal = document.getElementById("lengthInput").value
     let numberChecked = numberCheckbox.checked
     let symbolChecked = symbolCheckbox.checked
@@ -43,27 +43,19 @@ function submitConfigurations() {
         alert("The maximum password length is 30.");
     } else {
         passwordLength = lengthInputVal;
-        alert("Success! The following configurations have been saved:\n\n" +
-              "Password length: " + passwordLength + "\n" +
-              "Numbers included: " + numberChecked + "\n" +
-              "Symbols included: " + symbolChecked);
+        passwordOne.textContent = ""
+        passwordTwo.textContent = ""
+        for (let i = 0; i < passwordLength; i++) {
+            pass1value = Math.floor(Math.random()*characterPool.length)
+            passwordOne.textContent += characterPool[pass1value]
+        }
+        for (let i = 0; i < passwordLength; i++) {
+            pass2value = Math.floor(Math.random()*characterPool.length)
+            passwordTwo.textContent += characterPool[pass2value]
+        }
     }    
 
     return characterPool, passwordLength
-}
-
-
-function genPass() {
-    passwordOne.textContent = ""
-    passwordTwo.textContent = ""
-    for (let i = 0; i < passwordLength; i++) {
-        pass1value = Math.floor(Math.random()*characterPool.length)
-        passwordOne.textContent += characterPool[pass1value]
-    }
-    for (let i = 0; i < passwordLength; i++) {
-        pass2value = Math.floor(Math.random()*characterPool.length)
-        passwordTwo.textContent += characterPool[pass2value]
-    }
 }
 
 function copyFirstPass() {

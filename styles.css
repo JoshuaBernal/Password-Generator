@@ -1,0 +1,173 @@
+body {
+    font-family: "Inter", sans-serif;
+    background-color: #111827;
+}
+
+.main-contents {
+    background-color: #1f2937;
+    padding: 52px;
+    max-width: 600px;
+    min-width: 200px;
+    margin-top: 50px;
+    margin-left:auto;
+    margin-right: auto;
+    border-radius: 20px;
+}
+
+.headerTitle {
+    font-weight: 800;
+    color: white;
+    font-size: 40px;
+}
+
+.headerSubtitle {
+    font-weight: 400;
+    color: #D5D4D8;
+    font-size: 20px;
+}
+
+.ranpass {
+    color: #FBBF24;
+}
+
+.passConfigHeader {
+    color: #F0F0F0;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.instruct {
+    color: #D5D4D8;
+    font-size: 16px;
+}
+
+.toggleCheckbox {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.boxCheck {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #334762;
+    border-radius: 6px;
+}
+
+.toggleCheckbox:hover input ~ .checkmark {
+  background-color: #4F6C95;
+}
+
+/* When the checkbox is checked, add a blue background */
+.toggleCheckbox input:checked ~ .checkmark {
+  background-color: #FBBF24;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.toggleCheckbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.toggleCheckbox .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid #263448;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+#lengthInput {
+    background-color: #334762;
+    color: #D5D4D8;
+    border: none;
+    border-radius: 6px;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    padding: 5px;
+    font-size: 14px;
+}
+#lengthInput:focus {
+    background-color: #4F6C95;
+}
+::placeholder {
+    color: #D5D4D8;
+    opacity: 70%
+}
+
+button {
+    background-color: #F59E0B;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+}
+
+button:hover {
+    background-color: #c27d08;
+}
+
+#generateBtn {
+    margin: 19px 0 17px 0;
+}
+
+.generated-area {
+    display: flex;
+}
+
+.passGroup {
+    display: block;
+}
+
+.passwords {
+    background-color: #273549;
+    color: #FBBF24;
+    padding: 10px;
+    border-radius: 6px;
+    min-width: 273px;
+    min-height: 20px;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#passGroup1 {
+    margin-right: 6px;
+}
+#passGroup2 {
+    margin-left: 6px;
+}
+
+.solid {
+    border: 1px solid #2F3E53
+}
