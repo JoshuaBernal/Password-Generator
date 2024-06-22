@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <h1 class="headerTitle">Generate a random password</h1>
+        <h3 class="headerSubtitle">Never use an insecure password again.</h3>
+        <h3 class="passConfigHeader">Configure your password</h3>
+        <p class="instruct">Set password length between 8 and 30:</p> 
+        <input type="number" id="lengthInput" placeholder="15" min="8" max="30"><br><br>
+        <p>Toggle Numbers</p>
+        <input type="checkbox" id="toggleNumbers">
+        <p>Toggle Symbols</p>
+        <input type="checkbox" id="toggleSymbols"><br><br>
+        <button id="confirmLength" onclick="submitConfigurations()">Confirm</button>
+        <button id="generateBtn" onclick="genPass()">Generate passwords</button>
+        <p id="pass1"></p>
+        <p id="pass2"></p>
+        <button id="copyFirstPass" onclick="copyFirstPass()">Copy</button>
+        <button id="copySecondPass" onclick="copySecondPass()">Copy</button>
+        <script src="script.js"></script>
+    </body>
+</html>
