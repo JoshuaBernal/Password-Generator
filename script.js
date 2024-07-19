@@ -10,6 +10,7 @@ const symbols = ["~","`","!","@","#","$","%","^","&","*","(",")",
 const combinedLN = letters.concat(numbers)
 const combinedLS = letters.concat(symbols)
 const combinedALL = letters.concat(numbers.concat(symbols))
+const copiedToast = document.getElementById("copied-toast")
 
 let passwordOne = document.getElementById("pass1")
 let passwordTwo = document.getElementById("pass2")
@@ -60,10 +61,12 @@ function genPass() {
 
 function copyFirstPass() {
     navigator.clipboard.writeText(passwordOne.textContent)
-    alert("First password " + passwordOne.textContent + " copied to clipboard.")
+    copiedToast.className = "show"
+    setTimeout(function(){ copiedToast.className = copiedToast.className.replace("show", ""); }, 3000);
 }
 
 function copySecondPass() {
     navigator.clipboard.writeText(passwordTwo.textContent)
-    alert("Second password " + passwordTwo.textContent + " copied to clipboard.")
+    copiedToast.className = "show"
+    setTimeout(function(){ copiedToast.className = copiedToast.className.replace("show", ""); }, 3000);
 }

@@ -70,25 +70,23 @@ body {
     width: 25px;
     background-color: #334762;
     border-radius: 6px;
+        transition: background-color 0.1s ease-in 10ms;
 }
 
 .toggleCheckbox:hover input ~ .checkmark {
   background-color: #4F6C95;
 }
 
-/* When the checkbox is checked, add a blue background */
 .toggleCheckbox input:checked ~ .checkmark {
   background-color: #FBBF24;
 }
 
-/* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
   content: "";
   position: absolute;
   display: none;
 }
 
-/* Show the checkmark when checked */
 .toggleCheckbox input:checked ~ .checkmark:after {
   display: block;
 }
@@ -114,6 +112,7 @@ body {
     font-weight: 600;
     padding: 5px;
     font-size: 14px;
+        transition: background-color 0.1s ease-in 10ms; 
 }
 #lengthInput:focus {
     background-color: #4F6C95;
@@ -131,6 +130,7 @@ button {
     border: none;
     font-family: "Inter", sans-serif;
     font-weight: 600;
+        transition: background-color 0.2s ease-in 10ms;
 }
 
 button:hover {
@@ -170,4 +170,45 @@ button:hover {
 
 .solid {
     border: 1px solid #2F3E53
+}
+
+#copied-toast {
+    visibility: hidden; 
+    min-width: 250px;
+    margin-left: -125px; 
+    background-color: #273549;
+    color: #fff; 
+    text-align: center; 
+    border-radius: 10px; 
+    padding: 16px;
+    position: fixed; 
+    z-index: 1; 
+    left: 50%; 
+    bottom: 30px; 
+}
+  
+#copied-toast.show {
+    visibility: visible; 
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+  
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+  
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+  
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+  
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
 }
